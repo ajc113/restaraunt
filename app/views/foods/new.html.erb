@@ -1,0 +1,11 @@
+New Food Controller
+
+<%= form_for @food do |f| %>
+	<%= f.label :name %> <br>
+  	<%= f.text_field :name %> <br>
+	<br>
+	<%= f.label :description %> <br>
+  	<%= f.text_area :description %> <br>
+  	<br>
+  	<%= f.submit %>
+<% end %>
