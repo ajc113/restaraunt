@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-
+root 'foods#new'
  
 
 resources :foods 
-root 'foods#index'
 
+get '/index' => 'foods#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
