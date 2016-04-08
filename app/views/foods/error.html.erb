@@ -1,0 +1,9 @@
+<h1>Houston there is a problem!</h1>
+ 
+ 	<% @food.errors.full_messages.each do |msg| %>
+    
+    <h2>    
+    <li> <%= msg %> </li>
+	</h2>
+
+<% end %>

@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-  	#@foods = Food.all.order("created_at DESC")
+  	@foods = Food.all.order("created_at DESC")
   end
 
   def new
@@ -10,11 +10,11 @@ class FoodsController < ApplicationController
   def create
 		@food = Food.new(food_params)
 		if @food.save
-			flash[:success] = "You have created a new Food item"
+			flash[:notice] = "You have created a new Food item"
 			redirect_to @food
 
 		else  
-			render 'new'
+			render 'error'
 	end
 
 	def show
