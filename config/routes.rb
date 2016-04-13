@@ -4,6 +4,7 @@ root 'foods#new'
  
 
 resources :foods 
+resources :menus
 
 get '/new' => 'foods#index'
 
