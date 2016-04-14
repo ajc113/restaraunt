@@ -1,10 +1,6 @@
 <h1> Lobster Shack </h1>
-<br>
-<h1> Menus </h1>
-<br>
-<h2> BreakFast </h2>
-
-<% @foods.each do |food| %>
+	<br>
+		<% @foods.each do |food| %>
 	<h2>
 		<%=food.name %>
 	</h2>
@@ -13,12 +9,13 @@
 		<%= truncate(food.description, :length => 20) %>
 	</div>
 	<br>
-	<%= link_to "Look at food item", food %>
-<% end %>
-
+		<%= link_to "Additional Info", food %>
+		<% end %>
 <br>
-<h2> Lunch </h2>
-<br>
-<h2> Dinner </h2>
-
-
+		<% @menus.each do |menu| %>
+	<h2>
+		<%= menu.meal %>
+	</br>
+		<%= menu.cost %>
+	<% end %>
+ 

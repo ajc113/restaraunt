@@ -1,21 +1,26 @@
 class FoodsController < ApplicationController
 	def index
 		@foods = Food.all.order("created_at DESC")
+		@menus = Menu.all.order("created_at DESC")
 	end
 
 	def new
 		@food = Food.new
-		@menus = Menu.new
+		@menu = Menu.new
 		
+	end
+
+	def menu
+		@menu = Menu.all
 	end
 
 	def create
 		@food = Food.new(food_params)
-		@menus = Menu.new[menu_params]
+		@menu= Menu.new(menu_params)
 
 
 		if @food.save
-		
+			@menu.save
 
 			flash[:notice] = "You have created a new Food item"
 			redirect_to @food
@@ -27,6 +32,7 @@ class FoodsController < ApplicationController
 
 	def show
 		@food = Food.find(params[:id])
+		@menu = Menu.find(params[:id])
 		
 	end
 
@@ -49,11 +55,11 @@ class FoodsController < ApplicationController
 	private	
 	
 	def food_params
-		params.require(:food).permit(:name,:description, menu_attributes: [:meal_selection, :cost])
+		params.require(:food).permit(:name,:description, menus_attributes: [:id, :meal, :cost])
 	end
 
 	def menu_params
-		params.require(:menus).permit(:meal_selection, :cost)
+		params.require(:menus).permit(:meal, :cost)
 	end
 
 

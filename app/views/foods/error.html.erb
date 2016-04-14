@@ -6,4 +6,7 @@
     <li> <%= msg %> </li>
 	</h2>
 
-<% end %>
+	<% end %>
+
+	<% @menu.errors.full_messages.each do |msg| %>
+	 <li> <%= msg %> </li>	

@@ -1,2 +1,17 @@
-<h1> <%= @food.name %> </h1>
-<div> <%= @food.description %></div>
+	<h1>
+	 	<%= @food.name %> 
+	</h1>
+	<div>
+	 	<%= @food.description %>
+	</div>
+	</br>
+	<div>
+		<%= @menu.each do |menu| %>
+	 	<%= @menu.meal %> 
+	</div>
+	<div> 	
+		<%= @menu.cost %> 
+		<% end %>
+	</div>
+	</br>
+
