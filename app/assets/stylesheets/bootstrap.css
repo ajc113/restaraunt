@@ -8,9 +8,14 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-}
+      
+} 
 body {
   margin: 0;
+  background-image: url('https://img0.etsystatic.com/000/0/6705540/il_fullxfull.322333728.jpg');
+      no-repeat center center fixed;
+  opacity: .8; 
+
 }
 article,
 aside,

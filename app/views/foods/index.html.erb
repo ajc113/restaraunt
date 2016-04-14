@@ -1,21 +1,35 @@
-<h1> Lobster Shack </h1>
-	<br>
+<!DOCTYPE html>
+<html>
+<div class="container-fluid">
+<div class="sol-sm-6">
+<div class="text-center">
+
+<h1 class="bg-primary"> Lobster Shack ~ Menu ~
+	<div class="bg-info">
+	<h3 ><small>
+		<% @menus.each do |menu| %>
+		<%= menu.meal %>
+	</small></h3>
 		<% @foods.each do |food| %>
-	<h2>
-		<%=food.name %>
-	</h2>
+	<h2><strong>
+		<%= food.name %>
+	</strong></h2>
 
 	<div>
-		<%= truncate(food.description, :length => 20) %>
+	
+	<h3><small>	
+		<%= truncate(food.description, :length => 220) %>
+	</small></h3>
 	</div>
-	<br>
-		<%= link_to "Additional Info", food %>
-		<% end %>
-<br>
-		<% @menus.each do |menu| %>
-	<h2>
-		<%= menu.meal %>
-	</br>
+	<h3><small>
 		<%= menu.cost %>
-	<% end %>
- 
+		<% end %>
+ 	</small></h3>
+		<% end %>
+	</p>
+
+
+</h1>	
+</div>
+</div>
+</div

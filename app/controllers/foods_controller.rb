@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
 	def index
-		@foods = Food.all.order("created_at DESC")
-		@menus = Menu.all.order("created_at DESC")
+		@foods = Food.all.order(params[:id])
+		@menus = Menu.all.order(:meal)
 	end
 
 	def new
@@ -64,3 +64,4 @@ class FoodsController < ApplicationController
 
 
 end
+
